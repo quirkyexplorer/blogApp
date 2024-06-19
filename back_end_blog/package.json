@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "test": "cross-env NODE_ENV=test jest --watchAll --verbose --runInBand ",
     "start:test": "cross-env NODE_ENV=test node index.js",
-    "build:ui": "rm -rf dist && cd ../blogFrontEnd && npm run build && cp -r dist ../back_end_blog"
+    "build:ui": "rm -rf dist && cd ../blogFrontEnd && npm run build && cp -r dist ../back_end_blog",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "",
   "license": "ISC",
