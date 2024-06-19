@@ -6,7 +6,7 @@ import Notification from "./components/Notification";
 import Togglable from "./components/Togglable";
 import LoginView from "./components/LoginView.jsx";
 import BlogList from "./components/BlogList";
-
+// adding comment
 function App() {
   const [blogs, setBlogs] = useState([]);
   const [user, setUser] = useState(null);
