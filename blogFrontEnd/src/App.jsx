@@ -130,17 +130,17 @@ function App() {
     }
   };
 
-  console.log(user);
+
   const sortedBlogs = [...blogs].sort((a, b) => b.likes - a.likes);
 
   return (
-    <div>
+    <div className="bg-black">
       <div>
         <div className="flex justify-between">
-          <h1 className="bg-yellow-300">DevBlogs</h1>
+          <h1 className="text-white">DevBlogs</h1>
         </div>
       </div>
-      <input placeholder="search" />
+      
       {message.text ? (
         <Notification message={message.text} isError={message.isError} />
       ) : undefined}
@@ -154,7 +154,7 @@ function App() {
         <div>
           <div>
             <p className="text-red-500">{user.name} logged in</p>
-            <button onClick={handleLogout}>logout</button>
+            <button className="text-white" onClick={handleLogout}>logout</button>
           </div>
           <Togglable buttonLabel="new blog" ref={blogFormRef}>
             <BlogForm createBlog={createBlog} />

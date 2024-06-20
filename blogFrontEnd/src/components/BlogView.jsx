@@ -6,7 +6,6 @@ import likeService from "../services/likes.js";
 export default function Blog({ blog, deleteBlog, currentUser }) {
   const [visible, setVisible] = useState(false);
   const [likes, setLikes] = useState(blog.likes);
-  const [user, setUser] = useState("");
   const hideWhenVisible = { display: visible ? "none" : "" };
   const showWhenVisible = { display: visible ? "" : "none" };
   const toggleVisibility = () => {
@@ -29,8 +28,7 @@ export default function Blog({ blog, deleteBlog, currentUser }) {
 
   //  conditionally renders the remove button
   const removeButton = () => {
-    const user = currentUser;
-
+    
     const handleClick = () => {
       deleteBlog(blog.id, blog.title);
     };

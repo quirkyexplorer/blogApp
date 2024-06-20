@@ -1,4 +1,4 @@
-import React from 'react'
+
 import BlogView from "./BlogView.jsx";
 
 export default function BlogList({sortedBlogs, deleteBlog, currentUser}) {
