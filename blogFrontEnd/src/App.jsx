@@ -7,6 +7,13 @@ import Togglable from "./components/Togglable";
 import LoginView from "./components/LoginView.jsx";
 import BlogList from "./components/BlogList";
 
+const titleStyle = {
+  fontWeight: 'bold',
+  fontSize: '2.5em',
+  color: 'hsl(0, 0%, 100%)',
+  textShadow: '0 0 10px hsl(0, 0%, 25%), 0 0 15px hsl(0, 0%, 100%), 0 0 30px hsl(0, 0%, 100%)',
+};
+
 function App() {
   const [blogs, setBlogs] = useState([]);
   const [user, setUser] = useState(null);
@@ -130,14 +137,17 @@ function App() {
     }
   };
 
+  const formatName = (str) => {
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  }
 
   const sortedBlogs = [...blogs].sort((a, b) => b.likes - a.likes);
 
   return (
-    <div className="bg-black">
+    <div className="bg-custom-gradient bg-full bg-custom-pos  h-fit px-16">
       <div>
         <div className="flex justify-between">
-          <h1 className="text-white">DevBlogs</h1>
+          <h1 className="text-white" style={titleStyle}>DevBlogs</h1>
         </div>
       </div>
       
@@ -151,12 +161,13 @@ function App() {
           user={user}
         ></LoginView>
       ) : (
-        <div>
+        <div className="flex flex-col gap-8">
+          <p className="text-white"> Hello {formatName(user.name)}</p>
           <div>
-            <p className="text-red-500">{user.name} logged in</p>
-            <button className="text-white" onClick={handleLogout}>logout</button>
+            <button className="text-white font-semibold px-8 py-2 bg-purple-600 rounded-md" onClick={handleLogout}>logout</button>
           </div>
-          <Togglable buttonLabel="new blog" ref={blogFormRef}>
+
+          <Togglable buttonLabel="New Blog" ref={blogFormRef}>
             <BlogForm createBlog={createBlog} />
           </Togglable>
           <div>

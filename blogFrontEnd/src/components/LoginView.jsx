@@ -4,7 +4,7 @@ import LoginForm from "./LoginForm.jsx";
 export default function LoginView({ handleLogin, user }) {
   console.log(user);
   return (
-    <div className="bg-blue-400">
+    <div className="bg-custom-gradient">
         <LoginForm handleSubmit={handleLogin} />
     </div>
   );

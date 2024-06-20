@@ -46,24 +46,30 @@ export default function Blog({ blog, deleteBlog, currentUser }) {
   };
 
   return (
-    <div className="bg-blue-400" >
-      <p className="text-red-500">
-        {blog.title} {blog.author}
+    <div className="bg-button-gradient rounded-md p-4 w-fit" >
+      <div className="text-black gap-4">
+        <div>
+            {blog.title} by {blog.author}
+        </div>
+
+      
         <button
-          className="viewHidden"
+          className="viewHidden text-lg font-bold"
           onClick={toggleVisibility}
           style={hideWhenVisible}
         >
           view
         </button>
+
         <button
-          className="hide"
+          className="hide text-lg font-bold"
           onClick={toggleVisibility}
           style={showWhenVisible}
         >
           hide
         </button>
-      </p>
+        
+      </div>
       <div className="info" style={showWhenVisible}>
         <p className="url">{blog.url}</p>
         <div className="flex gap-4">

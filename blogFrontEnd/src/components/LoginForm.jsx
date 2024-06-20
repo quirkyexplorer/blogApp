@@ -16,7 +16,6 @@ export default function LoginForm({ handleSubmit }) {
       username,
       password,
     });
-    setUsername('');
     setPassword('');
   };
   return (
@@ -50,7 +49,7 @@ export default function LoginForm({ handleSubmit }) {
                 />
               </div>
 
-              <button className='bg-white h-8 w-16 rounded-md text-black' type="submit">login</button>
+              <button className='text-white font-semibold px-8 py-2 bg-purple-600 rounded-md' type="submit">login</button>
             </form>
         </div>
         
